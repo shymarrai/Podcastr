@@ -141,9 +141,8 @@ export const getStaticProps: GetStaticProps = async () => {
       _order: 'desc'
     }
   })
-
-  const episodes = data.map(episode => {
-    return {
+  
+  const episodes = data.map(episode => ({
       id: episode.id,
       title:  episode.title,
       thumbnail: episode.thumbnail,
@@ -151,10 +150,10 @@ export const getStaticProps: GetStaticProps = async () => {
       publishedAt: format(parseISO(episode.published_at), 'd MMM yy', {locale: ptBr}),
       duration: Number(episode.file.duration),
       durationAsString: convertDurationToTimeString(Number(episode.file.duration)),
-      url: episode.file.url
+      url: episode.file.url,
 
-    }
-  })
+    
+  }))
 
   const latestEpisodes = episodes.slice(0,2)
   const allEpisodes = episodes.slice(2,episodes.length)
