@@ -31,7 +31,7 @@
         right: 0;
         top: 50%;
         background: var(--green-500);
-        transform: translate(50%, 50%);
+        transform: translate(50%, -50%);
       }
       &:hover {
         filter: brightness(0.9);
@@ -62,9 +62,9 @@
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background: #333;
+          background: #ddd;
           position: absolute;
-          right: 0;
+          left: 0;
           top: 50%;
           transform: translate(-50%, -50%);
         }
